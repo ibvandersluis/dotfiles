@@ -4,6 +4,7 @@
 mv ~/.gitconfig ~/.gitconfig.old
 mv ~/.inputrc ~/.inputrc.old
 mv ~/.xprofile ~/.xprofile.old
+mv ~/.alacritty.yml ~/.alacritty.yml.old
 
 mv ~/.config/i3/config ~/.config/i3/config.old
 
@@ -13,6 +14,7 @@ sudo mv /etc/xdg/picom.conf /etc/xdg/picom.conf.old
 cp .gitconfig ~/.gitconfig
 cp .inputrc ~/.inputrc 
 cp .xprofile ~/.xprofile
+cp .alacritty.yml ~/.alacritty.yml
 
 cp .config/i3/config ~/.config/i3/config
 
