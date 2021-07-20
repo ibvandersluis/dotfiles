@@ -5,7 +5,11 @@ mv ~/.gitconfig ~/.gitconfig.old
 mv ~/.inputrc ~/.inputrc.old
 mv ~/.xprofile ~/.xprofile.old
 
+mv ~/.config/i3/config ~/.config/i3/config.old
+
 # Copy these dotfiles to the appropriate locations
 cp .gitconfig ~/.gitconfig
 cp .inputrc ~/.inputrc 
 cp .xprofile ~/.xprofile
+
+cp .config/i3/config ~/.config/i3/config
