@@ -7,9 +7,13 @@ mv ~/.xprofile ~/.xprofile.old
 
 mv ~/.config/i3/config ~/.config/i3/config.old
 
+sudo mv /etc/xdg/picom.conf /etc/xdg/picom.conf.old
+
 # Copy these dotfiles to the appropriate locations
 cp .gitconfig ~/.gitconfig
 cp .inputrc ~/.inputrc 
 cp .xprofile ~/.xprofile
 
 cp .config/i3/config ~/.config/i3/config
+
+sudo cp picom.conf /etc/xdg/picom.conf
