@@ -1,14 +1,31 @@
 #!/bin/bash
 
 # Rename existing dotfiles as .dotfile.old
-mv ~/.gitconfig ~/.gitconfig.old
-mv ~/.inputrc ~/.inputrc.old
-mv ~/.xprofile ~/.xprofile.old
-mv ~/.alacritty.yml ~/.alacritty.yml.old
+declare -a file_paths=(~/.gitconfig
+                       ~/.inputrc
+                       ~/.xprofile
+                       ~/.alacritty.yml
+                       ~/.config/i3/config)
 
-mv ~/.config/i3/config ~/.config/i3/config.old
+declare -a protected_files=(/etc/xdg/picom.conf)
 
-sudo mv /etc/xdg/picom.conf /etc/xdg/picom.conf.old
+for FILE in "${file_paths[@]}"
+do
+  if [ -f "$FILE" ]; then
+    mv "$FILE" "$FILE.old"
+  else
+    echo "$FILE does not exist."
+  fi
+done
+
+for FILE in "${protected_files[@]}"
+do
+  if [ -f "$FILE" ]; then
+    sudo mv "$FILE" "$FILE.old"
+  else
+    echo "$FILE does not exist."
+  fi
+done
 
 # Copy these dotfiles to the appropriate locations
 cp .gitconfig ~/.gitconfig
